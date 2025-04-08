@@ -1,5 +1,5 @@
 import React from 'react';
-import { books } from '../data'
+import { books } from '../data.js'
 
 const Discounted = () => {
     return (
