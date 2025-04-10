@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Books from "./pages/Books"
 import {books} from "./data"
 import Cart from "./pages/Cart"
+import { auth, db } from '/firebase/init'
 
 function App() {
   const [cart, setCart] = useState([]);
