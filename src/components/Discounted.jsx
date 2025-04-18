@@ -1,5 +1,6 @@
 import React from 'react';
 import { books } from '../data.js'
+import Book from './Book.jsx';
 
 const Discounted = () => {
     return (

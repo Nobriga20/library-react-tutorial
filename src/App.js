@@ -1,18 +1,14 @@
 import './index.css';
-import Discounted from './components/Discounted'
-import Explore from './components/Explore'
 import Footer from './components/Footer'
 import React, { useState } from "react"
-import Landing from './components/Landing';
+import { useEffect } from "react"
 import Nav from './components/Nav';
-import Highlights from './components/Highlights'
-import Featured from './components/Featured'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from "./pages/Home";
 import Books from "./pages/Books"
 import {books} from "./data"
 import Cart from "./pages/Cart"
-import { auth, db } from '/firebase/init'
+import BookInfo from './pages/BookInfo';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -47,11 +43,12 @@ function App() {
     return counter;
   }
 
-  useEffet (() => {
+  useEffect (() => {
    console.log(cart);
   }, [cart]);
  
-return 
+return (
+
   <Router>
   <div className="App">
     <Nav numberOfItems={numberOfItems()} />
@@ -62,6 +59,10 @@ return
     <Footer />
     </div>
   </Router>
+  
+)
+
+ 
 
 }
 
