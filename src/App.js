@@ -46,24 +46,19 @@ function App() {
   useEffect (() => {
    console.log(cart);
   }, [cart]);
- 
-return (
 
-  <Router>
-  <div className="App">
-    <Nav numberOfItems={numberOfItems()} />
-    <Route path="/" exact component={Home} />
-    <Route path="/books" exact render={<Books books={books} />} />
-    <Route path="/books/:id" render={() => <BookInfo books={books} />} />
-    <Route path="/cart" render={() => <Cart books={books} cart={cart} change quantity={changeQuantity} removeItem={removeItem} />} />
-    <Footer />
-    </div>
-  </Router>
-  
-)
-
- 
-
+  return (
+    <Router>
+      <div className="App">
+        <Nav numberOfItems={numberOfItems()} />
+          <Route path="/" exact component={Home} /> {/* Use the 'component' prop directly */}
+          <Route path="/books" exact render={() => <Books books={books} />} /> {/* Use 'render' with a function */}
+          <Route path="/books/:id" render={() => <BookInfo books={books} />} /> {/* Use 'render' with a function */}
+          <Route path="/cart" render={() => <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem} />} /> {/* Use 'render' with a function */}
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;
